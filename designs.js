@@ -5,19 +5,20 @@ const pixelCanvas = document.querySelector('.pixel-canvas');
 function makeGrid() {
   let gridHeight = document.querySelector('.input-height').value;
   let gridWidth = document.querySelector('.input-width').value;
-  // If grid is already present, clears any cells that have been filled in
+  // if grid already present, clears any cells that have been filled in
   while (pixelCanvas.firstChild) {
     pixelCanvas.removeChild(pixelCanvas.firstChild);
     }
-  // Creates rows and cells
+  // creates rows and cells
   for (let i = 1; i <= gridHeight; i++) {
     let gridRow = document.createElement('tr');
     pixelCanvas.appendChild(gridRow);
     for (let j = 1; j <= gridWidth; j++) {
       let gridCell = document.createElement('td');
       gridRow.appendChild(gridCell);
-      // fills in cell(s) with selected color upon click
-      gridCell.addEventListener('click', function() {
+      // fills in cell with selected color upon mouse press (unlike 'click', doesn't also require release of mouse button)
+      gridCell.addEventListener('mousedown', function() {
+        // 'color' defined here rather than globally so JS checks whether user has changed color with each new mouse press on cell
         const color = document.querySelector('.color-picker').value;
         event.target.style.backgroundColor = color;
       })
@@ -25,7 +26,28 @@ function makeGrid() {
   }
 }
 
-// Upon user's submitting height and width selections, callback function (inside method) calls makeGrid function. But event method preventDefault() first intercepts the 'submit' event, which would normally submit the form and refresh the page, preventing makeGrid() from being processed.
+// enables color dragging with selected color (code for filling in single cell above)
+let down = false; // Tracks whether or not mouse pointer is pressed
+
+// listens for mouse pointer press and release on grid. Changes value to true when pressed, but sets it back to false as soon as released
+pixelCanvas.addEventListener('mousedown', function(e) {
+	down = true;
+	pixelCanvas.addEventListener('mouseup', function() {
+		down = false;
+	});
+
+  pixelCanvas.addEventListener('mouseover', function mouseOver(e) {
+    // 'color' defined here rather than globally so JS checks whether user has changed color with each new mouse press on cell
+    const color = document.querySelector('.color-picker').value;
+    // while mouse pointer is pressed, fills in element with selected color
+  	if (down) {
+    // 'TD' capitalized because element.tagName returns upper case for DOM trees that represent HTML elements
+  	e.target.style.backgroundColor = color;
+  	}
+  });
+});
+
+// upon user's submitting height and width selections, callback function (inside method) calls makeGrid function. But event method preventDefault() first intercepts the 'submit' event, which would normally submit the form and refresh the page, preventing makeGrid() from being processed
 sizePicker.addEventListener('submit', function(e) {
   e.preventDefault();
   makeGrid();
