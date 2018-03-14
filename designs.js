@@ -26,6 +26,12 @@ function makeGrid() {
   }
 }
 
+// upon user's submitting height and width selections, callback function (inside method) calls makeGrid function. But event method preventDefault() first intercepts the 'submit' event, which would normally submit the form and refresh the page, preventing makeGrid() from being processed
+sizePicker.addEventListener('submit', function(e) {
+  e.preventDefault();
+  makeGrid();
+});
+
 // enables color dragging with selected color (code for filling in single cell above)
 let down = false; // Tracks whether or not mouse pointer is pressed
 
@@ -35,20 +41,20 @@ pixelCanvas.addEventListener('mousedown', function(e) {
 	pixelCanvas.addEventListener('mouseup', function() {
 		down = false;
 	});
+  // ensures cells won't be colored if grid is left while pointer is held down
+  pixelCanvas.addEventListener('mouseleave', function() {
+    down = false;
+  });
 
-  pixelCanvas.addEventListener('mouseover', function mouseOver(e) {
+  pixelCanvas.addEventListener('mouseover', function(e) {
     // 'color' defined here rather than globally so JS checks whether user has changed color with each new mouse press on cell
     const color = document.querySelector('.color-picker').value;
-    // while mouse pointer is pressed, fills in element with selected color
+    // while mouse pointer is pressed and within grid boundaries, fills cell with selected color. Inner if statement fixes bug that fills in entire grid
   	if (down) {
-    // 'TD' capitalized because element.tagName returns upper case for DOM trees that represent HTML elements
-  	e.target.style.backgroundColor = color;
-  	}
+      // 'TD' capitalized because element.tagName returns upper case for DOM trees that represent HTML elements
+      if (e.target.tagName === 'TD') {
+      	e.target.style.backgroundColor = color;
+      }
+    }
   });
-});
-
-// upon user's submitting height and width selections, callback function (inside method) calls makeGrid function. But event method preventDefault() first intercepts the 'submit' event, which would normally submit the form and refresh the page, preventing makeGrid() from being processed
-sizePicker.addEventListener('submit', function(e) {
-  e.preventDefault();
-  makeGrid();
 });
