@@ -32,7 +32,7 @@ sizePicker.addEventListener('submit', function(e) {
   makeGrid();
 });
 
-// enables color dragging with selected color (code for filling in single cell above)
+// enables color dragging with selected color (code for filling in single cell is above)
 let down = false; // Tracks whether or not mouse pointer is pressed
 
 // listens for mouse pointer press and release on grid. Changes value to true when pressed, but sets it back to false as soon as released
