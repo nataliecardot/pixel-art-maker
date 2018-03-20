@@ -20,7 +20,7 @@ function makeGrid() {
       gridCell.addEventListener('mousedown', function() {
         // 'color' defined here rather than globally so JS checks whether user has changed color with each new mouse press on cell
         const color = document.querySelector('.color-picker').value;
-        event.target.style.backgroundColor = color;
+        this.style.backgroundColor = color;
       })
      }
   }
@@ -33,7 +33,7 @@ sizePicker.addEventListener('submit', function(e) {
 });
 
 // enables color dragging with selected color (code for filling in single cell is above)
-let down = false; // Tracks whether or not mouse pointer is pressed
+let down = false; // tracks whether or not mouse pointer is pressed
 
 // listens for mouse pointer press and release on grid. Changes value to true when pressed, but sets it back to false as soon as released
 pixelCanvas.addEventListener('mousedown', function(e) {
@@ -58,3 +58,5 @@ pixelCanvas.addEventListener('mousedown', function(e) {
     }
   });
 });
+
+makeGrid(30, 30);

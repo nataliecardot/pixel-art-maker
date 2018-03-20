@@ -8,13 +8,13 @@ body {
 h1 {
   font-family: Helvetica;
   color: grey;
-  font-size: 70px;
+  font-size: 3em;
   /* single margin value sets the same value for all four sides. Also, 1em is equal to font size, which is typically 16px by default */
   margin: 0.2em;
 }
 
 /* first margin value is top, second is right and left sides, third is bottom */
-h3 {
+h4 {
   color: darkgrey;
   margin: 1em 0 0.75em;
 }

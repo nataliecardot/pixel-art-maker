@@ -8,23 +8,20 @@
   </head>
   <body>
       <h1>Pixel Art Maker</h1>
-
-      <h3>choose your grid size (50 max)</h3>
+      <h4>choose your grid size (50 max)</h4>
       <!-- class names (used in CSS) all lower case and delimited with hyphens per Udacity Frontend Nanodegree Style Guide (CSS page) -->
       <form class="size-picker">
           height:
-          <input type="number" class="input-height" name="height" min="1" max="50" value="30">
+          <input type="number" class="input-height" name="height" min="1" max="50" value="25">
           width:
-          <input type="number" class="input-width" name="width" min="1" max="50" value="30">
+          <input type="number" class="input-width" name="width" min="1" max="50" value="25">
           <input type="submit" class="submit-button" value="submit">
       </form>
-
-      <h3>pick a color</h3>
+      <h4>pick a color</h4>
       <input type="color" class="color-picker">
-
-      <h3>design the canvas</h3>
+      <h4>design the canvas</h4>
       <table class="pixel-canvas"></table>
-
+      <br>
       <!-- since the script tag is at the end of the body, $(document).ready() is not required in JavaScript sheet. (If it were instead placed in head, it would be needed) -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="designs.js"></script>
