@@ -59,4 +59,4 @@ pixelCanvas.addEventListener('mousedown', function(e) {
   });
 });
 
-makeGrid(30, 30);
+makeGrid(25, 25);
