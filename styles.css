@@ -1,27 +1,24 @@
 body {
   text-align: center;
   font-family: Arial;
-
+  background-color: #ccdce3;
 }
 
 /* styles title */
 h1 {
   font-family: Helvetica;
   color: grey;
-  font-size: 3em;
-  /* single margin value sets the same value for all four sides. Also, 1em is equal to font size, which is typically 16px by default */
-  margin: 0.2em;
+  font-size: 2.5em;
+  /* single margin value sets the same value for all four sides. 1em is equal to the font size, which is typically 16px by default */
+  margin: 0.6em;
+  margin-left: 2.3em;
 }
 
 /* first margin value is top, second is right and left sides, third is bottom */
 h4 {
   color: darkgrey;
   margin: 1em 0 0.75em;
-}
-
-/* 'first-of-type' selector targets first occurrence of an element within its container; in this case it sets the margin above first h3 element ("choose your grid size") to 1em. */
-h3:first-of-type {
-  margin-top: 1em;
+  text-align: left;
 }
 
 table,
@@ -30,10 +27,13 @@ td {
   border: silver 1px solid;
 }
 
+.pixel-canvas {
+  background-color : white;
+}
+
 /* 'border-collapse' CSS property specifies whether a table's cells have shared or separate borders; 'collapse' value causes cells to have shared borders */
 table {
   border-collapse: collapse;
-  margin: 0 auto;
 }
 
 tr {
@@ -64,8 +64,38 @@ input[type=number] {
 	text-decoration: none;
 	text-shadow: 0 1px #fff;
   cursor: pointer;
+  /* places button on its own line */
+  display: block;
+  margin-top: 1em;
 }
 
 .color-picker {
 	border: 1px solid #dcdcdc;
+}
+
+/* styles content to left of grid */
+.inputs {
+  text-align: left;
+  margin-left: 8em;
+  margin-top: 5.8em;
+  border-radius: 7px;
+  border: 1px solid #dcdcdc;
+  padding-left: 2em;
+  width: 200px;
+  background-color : white;
+}
+
+p {
+  color: darkgrey;
+}
+
+.column {
+  float: left;
+  width: 35%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
