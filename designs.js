@@ -60,3 +60,8 @@ pixelCanvas.addEventListener('mousedown', function(e) {
 });
 
 makeGrid(25, 25);
+
+// removes color from cell upon double-click
+pixelCanvas.addEventListener('dblclick', e => {
+  e.target.style.backgroundColor = null;
+});

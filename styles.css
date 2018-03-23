@@ -1,7 +1,7 @@
 body {
   text-align: center;
   font-family: Arial;
-  background-color: #ccdce3;
+  background-color: #e3e4e6;
 }
 
 /* styles title */
@@ -89,6 +89,7 @@ p {
   color: darkgrey;
 }
 
+/* implements two-column layout */
 .column {
   float: left;
   width: 35%;
