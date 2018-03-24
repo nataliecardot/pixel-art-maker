@@ -9,9 +9,6 @@ h1 {
   font-family: Helvetica;
   color: grey;
   font-size: 2.5em;
-  /* single margin value sets the same value for all four sides. 1em is equal to the font size, which is typically 16px by default */
-  margin: 0.6em;
-  margin-left: 2.3em;
 }
 
 /* first margin value is top, second is right and left sides, third is bottom */
@@ -41,7 +38,8 @@ tr {
 }
 
 td {
-  width: 20px;
+  min-width: 20px;
+  box-sizing: border-box;
 }
 
 /* styles height and width input boxes */
@@ -77,10 +75,10 @@ input[type=number] {
 .inputs {
   text-align: left;
   margin-left: 8em;
-  margin-top: 5.8em;
+  margin-top: 11em;
   border-radius: 7px;
   border: 1px solid #dcdcdc;
-  padding-left: 2em;
+  padding-left: 2.5em;
   width: 200px;
   background-color : white;
 }
@@ -89,14 +87,22 @@ p {
   color: darkgrey;
 }
 
-/* implements two-column layout */
+/* part of two-column layout implementation */
 .column {
   float: left;
   width: 35%;
 }
 
+/* ensures title ('Pixel Art Maker') is centered above grid */
+.column:last-of-type {
+  width: auto;
+}
+
+/* part of two-column layout implementation. :after' is a pseudo element, affecting display of generated content */
 .row:after {
+  /* you can't style generated content without defining what that content should be. If content not needed, just an extra 'invisible element' to style, and just style that. Without this, default value of content: none is assumed, meaning there is nothing for style to be applied to.  */
   content: "";
   display: table;
+  /* cleared elements are pushed below the corresponding floated elements; 'clear: both' pushes element below all floated elements */
   clear: both;
 }
