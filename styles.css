@@ -4,14 +4,14 @@ body {
   background-color: #e3e4e6;
 }
 
-/* styles title */
+/* Styles title */
 h1 {
   font-family: Helvetica;
   color: grey;
   font-size: 2.5em;
 }
 
-/* first margin value is top, second is right and left sides, third is bottom */
+/* First margin value is top, second is right and left sides, third is bottom */
 h4 {
   color: darkgrey;
   margin: 1em 0 0.75em;
@@ -48,8 +48,8 @@ input[type=number] {
   border: 1px solid #dcdcdc;
 }
 
-/* styles submit button, including a change of displayed mouse cursor to inform user he/she is hovering over something clickable */
-.submit-button {
+/* Styles submit button, including a change of displayed mouse cursor to inform user he/she is hovering over something clickable */
+.submit-button, .quick-fill {
   box-shadow: inset 0px 1px 0 0 #fff;
 	background: linear-gradient(#f9f9f9 5%, #e9e9e9 100%);
   /* creates rounded edges (more pixels -> more rounded) */
@@ -57,12 +57,12 @@ input[type=number] {
 	border: 1px solid #dcdcdc;
 	color: #666;
 	font-weight: bold;
-  /* padding is space between element's content and border. First value sets top and bottom padding; second value sets right and left */
+  /* Padding is space between element's content and border. First value sets top and bottom padding; second value sets right and left */
 	padding: 6px 24px;
 	text-decoration: none;
 	text-shadow: 0 1px #fff;
   cursor: pointer;
-  /* places button on its own line */
+  /* Places button on its own line */
   display: block;
   margin-top: 1em;
 }
@@ -71,7 +71,7 @@ input[type=number] {
 	border: 1px solid #dcdcdc;
 }
 
-/* styles content to left of grid */
+/* Styles content to left of grid */
 .inputs {
   text-align: left;
   margin-left: 8em;
@@ -87,22 +87,22 @@ p {
   color: darkgrey;
 }
 
-/* part of two-column layout implementation */
+/* Part of two-column layout implementation */
 .column {
   float: left;
   width: 35%;
 }
 
-/* ensures title ('Pixel Art Maker') is centered above grid */
+/* Ensures title ('Pixel Art Maker') is centered above grid */
 .column:last-of-type {
   width: auto;
 }
 
-/* part of two-column layout implementation. :after' is a pseudo element, affecting display of generated content */
+/* Part of two-column layout implementation. :after' is a pseudo element, affecting display of generated content */
 .row:after {
-  /* you can't style generated content without defining what that content should be. If content not needed, just an extra 'invisible element' to style, and just style that. Without this, default value of content: none is assumed, meaning there is nothing for style to be applied to.  */
+  /* You can't style generated content without defining what that content should be. If content not needed, just an extra 'invisible element' to style, and just style that. Without this, default value of content: none is assumed, meaning there is nothing for style to be applied to */
   content: "";
   display: table;
-  /* cleared elements are pushed below the corresponding floated elements; 'clear: both' pushes element below all floated elements */
+  /* Cleared elements are pushed below the corresponding floated elements; 'clear: both' pushes element below all floated elements */
   clear: both;
 }
