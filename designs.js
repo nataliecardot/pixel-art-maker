@@ -74,7 +74,7 @@ pixelCanvas.addEventListener('dblclick', e => {
   e.target.style.backgroundColor = null;
 });
 
-// DRAW AND ERASE MODES:
+// NONDEFAULT DRAW AND ERASE MODES:
 
 // Allows for drag and single-cell erasing upon clicking 'erase' button. Code for double-click erase functionality (Without entering erase mode) is above. Also note 'down' was set to false in variable above
 eraseMode.addEventListener('click', function() {
