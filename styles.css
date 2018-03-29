@@ -76,13 +76,35 @@ input[type=number] {
 
 .color-picker {
 	border: 1px solid #dcdcdc;
+  cursor: pointer;
+}
+
+.color-picker {
+	border: 1px solid #dcdcdc;
+  -webkit-appearance: none;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.color-picker::-webkit-color-swatch {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+}
+.color-picker::-webkit-color-swatch-wrapper {
+  border: none;
+  border-radius: 10px;
+  padding: 0;
 }
 
 /* Styles content to left of grid */
 .inputs {
   text-align: left;
   margin-left: 8em;
-  margin-top: 5.3em;
+  margin-top: 5.4em;
   border-radius: 7px;
   border: 1px solid #dcdcdc;
   padding-left: 2em;
