@@ -116,7 +116,7 @@ drawMode.addEventListener('click', function() {
     });
     pixelCanvas.addEventListener('mouseover', function(e) {
       const color = document.querySelector('.color-picker').value;
-      // While mouse pointer is pressed and within grid boundaries, empties cell contents. Inner if statement fixes bug that fills in entire grid
+      // While mouse pointer is pressed and within grid boundaries, fills cell with selected color. Inner if statement fixes bug that fills in entire grid
     	if (down) {
         if (e.target.tagName === 'TD') {
         	e.target.style.backgroundColor = color;
@@ -126,6 +126,7 @@ drawMode.addEventListener('click', function() {
   });
   // Enables single-cell coloring while in draw mode
   pixelCanvas.addEventListener('click', function(e) {
+    if (e.target.tagName !== 'td') return;
     const color = document.querySelector('.color-picker').value;
     e.target.style.backgroundColor = color;
   });

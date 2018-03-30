@@ -1,28 +1,31 @@
 body {
   text-align: center;
   font-family: Arial;
-  background-color: #e3e4e6;
+  background-color: #ececec;
+}
+
+* {
+  font-family: Arial;
+  color: grey;
 }
 
 /* Styles title */
 h1 {
-  font-family: Helvetica;
-  color: grey;
   font-size: 2em;
   text-transform: uppercase;
 }
 
 /* First margin value is top, second is right and left sides, third is bottom */
 h4 {
-  color: darkgrey;
   margin: 1em 0 0.75em;
   text-align: left;
   text-transform: uppercase;
 }
 
-p {
-  font-size: 14px;
-  color: darkgrey;
+/* Applies to italicized text */
+em {
+  font-size: 13px;
+  color: #bfbfbf;
 }
 
 table,
@@ -62,21 +65,15 @@ input[type=number] {
   /* creates rounded edges (more pixels -> more rounded) */
 	border-radius: 7px;
 	border: 1px solid #dcdcdc;
-	color: #666;
 	font-weight: bold;
   /* Padding is space between element's content and border. First value sets top and bottom padding; second value sets right and left */
 	padding: 6px 24px;
 	text-decoration: none;
-	text-shadow: 0 1px #fff;
+	/* text-shadow: 0 1px #fff; */
   cursor: pointer;
   /* Places button on its own line */
   display: block;
   margin-top: 1em;
-}
-
-.color-picker {
-	border: 1px solid #dcdcdc;
-  cursor: pointer;
 }
 
 .color-picker {
@@ -87,6 +84,7 @@ input[type=number] {
   border-radius: 10px;
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 
 .color-picker::-webkit-color-swatch {
@@ -104,7 +102,7 @@ input[type=number] {
 .inputs {
   text-align: left;
   margin-left: 8em;
-  margin-top: 5.4em;
+  margin-top: 5.35em;
   border-radius: 7px;
   border: 1px solid #dcdcdc;
   padding-left: 2em;
