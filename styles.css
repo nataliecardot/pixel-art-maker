@@ -125,7 +125,7 @@ input[type=number] {
 
 /* Part of two-column layout implementation. :after' is a pseudo element, affecting display of generated content */
 .row:after {
-  /* You can't style generated content without defining what that content should be. If content not needed, just an extra 'invisible element' to style, and just style that. Without this, default value of content: none is assumed, meaning there is nothing for style to be applied to */
+  /* You can't style generated content without defining what that content should be. If content not needed, just add extra 'invisible element' to style, and style that. Without this, default value of content: none is assumed, meaning there is nothing for style to be applied to */
   content: "";
   display: table;
   /* Cleared elements are pushed below the corresponding floated elements; 'clear: both' pushes element below all floated elements */
