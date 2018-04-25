@@ -98,7 +98,7 @@ eraseMode.addEventListener('click', function() {
     });
   });
   // Enables single-cell erase while in erase mode
-  pixelCanvas.addEventListener('click', function(e) {
+  pixelCanvas.addEventListener('mousedown', function(e) {
     e.target.style.backgroundColor = null;
   });
 });
@@ -125,8 +125,8 @@ drawMode.addEventListener('click', function() {
     });
   });
   // Enables single-cell coloring while in draw mode
-  pixelCanvas.addEventListener('click', function(e) {
-    if (e.target.tagName !== 'td') return;
+  pixelCanvas.addEventListener('mousedown', function(e) {
+    if (e.target.tagName !== 'TD') return;
     const color = document.querySelector('.color-picker').value;
     e.target.style.backgroundColor = color;
   });
