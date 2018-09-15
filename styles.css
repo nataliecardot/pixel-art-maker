@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   text-align: center;
   font-family: Arial;
   background-color: #ececec;
@@ -130,4 +131,94 @@ input[type=number] {
   display: table;
   /* Cleared elements are pushed below the corresponding floated elements; 'clear: both' pushes element below all floated elements */
   clear: both;
+}
+
+.mobile-message {
+  background-color: #fff;
+  height: 100vh;
+  display: none;
+}
+
+/* Mobile phones/extra small screens */
+@media screen and (max-width: 767px) {
+  .mobile-message {
+    display: table;
+  }
+
+  p {
+    text-align: center;
+    font-size: 17px;
+    /* Default: left and right margin of 1em; */
+    padding: 0 3em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .pixel-canvas {
+    display: none;
+  }
+
+  .inputs {
+    display: none;
+  }
+
+  .column {
+    display: none;
+  }
+}
+
+/* Tablets in portrait view */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mobile-message {
+    display: table;
+  }
+
+  p {
+    text-align: center;
+    font-size: 30px;
+    /* Default: left and right margin of 1em; */
+    padding: 0 4.5em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .pixel-canvas {
+    display: none;
+  }
+
+  .inputs {
+    display: none;
+  }
+
+  .column {
+    display: none;
+  }
+}
+
+/* Tablets in landscape view */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .mobile-message {
+    display: table;
+  }
+
+  p {
+    text-align: center;
+    font-size: 30px;
+    /* Default: left and right margin of 1em; */
+    padding: 0 8em;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .pixel-canvas {
+    display: none;
+  }
+
+  .inputs {
+    display: none;
+  }
+
+  .column {
+    display: none;
+  }
 }
