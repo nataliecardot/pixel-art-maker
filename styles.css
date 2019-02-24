@@ -12,8 +12,12 @@ body {
 
 /* Styles title */
 h1 {
-  font-size: 2em;
+  font-size: 3em;
+  margin-bottom: 0.4em;
   text-transform: uppercase;
+  font-family: VT323;
+  opacity: 0.8;
+  letter-spacing: 1.7px;
 }
 
 /* First margin value is top, second is right and left sides, third is bottom */
@@ -120,7 +124,7 @@ i:hover {
 .inputs {
   text-align: left;
   margin-left: 8em;
-  margin-top: 6.45em;
+  margin-top: 7.5em;
   border-radius: 7px;
   border: 1px solid #dcdcdc;
   padding-left: 2em;
