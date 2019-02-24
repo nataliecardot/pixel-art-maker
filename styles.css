@@ -72,9 +72,26 @@ input[type=number] {
 	text-decoration: none;
 	/* text-shadow: 0 1px #fff; */
   cursor: pointer;
-  /* Places button on its own line */
+  /* Places button on its own line. Note this is later changed for submit-button to display icon next to it */
   display: block;
   margin-top: 1em;
+}
+
+/* Set to display:block above, so have to change to this for icon to appear next to button (both must be wrapped in div). Default for button is inline-block */
+.submit-button {
+  display: inline;
+}
+
+.fa-redo {
+  padding-left: 12px;
+  position: relative;
+  top: 2.2px;
+  color: #539e48;
+  opacity: 0.8;
+}
+
+i:hover {
+  cursor: pointer;
 }
 
 .color-picker {
@@ -103,7 +120,7 @@ input[type=number] {
 .inputs {
   text-align: left;
   margin-left: 8em;
-  margin-top: 5.35em;
+  margin-top: 6.45em;
   border-radius: 7px;
   border: 1px solid #dcdcdc;
   padding-left: 2em;

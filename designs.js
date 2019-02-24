@@ -3,6 +3,7 @@ const pixelCanvas = document.querySelector('.pixel-canvas');
 const quickFill = document.querySelector('.quick-fill');
 const eraseMode = document.querySelector('.erase-mode');
 const drawMode = document.querySelector('.draw-mode');
+const reset = document.querySelector('.fa-redo');
 
 function makeGrid() {
   document.body.style.cursor = "url(brush.png) 0 32, auto";
@@ -33,6 +34,10 @@ makeGrid(25, 25);
 // Upon user's submitting height and width selections, callback function (inside method) calls makeGrid function. But event method preventDefault() first intercepts the 'submit' event, which would normally submit the form and refresh the page, preventing makeGrid() from being processed
 sizePicker.addEventListener('submit', function(e) {
   e.preventDefault();
+  makeGrid();
+});
+
+reset.addEventListener('click', function() {
   makeGrid();
 });
 

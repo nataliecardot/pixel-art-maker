@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
     <!-- Ensures proper rendering and touch zooming -->
@@ -7,6 +7,9 @@
     <!-- Forces IE 8/9/10 to use its latest rendering engine -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Pixel Art Maker</title>
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="icon" href="../img/favicon-32.png" sizes="32x32">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -25,8 +28,9 @@
             <br><br>
             width:
             <input type="number" class="input-width" name="width" min="1" max="50" value="25">
-            <input type="submit" class="submit-button" value="submit">
-            <p><em>also clears grid</em></p>
+            <div>
+              <input type="submit" class="submit-button" value="submit"><i class="fas fa-redo"></i>
+            </div>
           </form>
           <h4>select color</h4>
           <input type="color" class="color-picker" value="#6aa5b8">
@@ -43,6 +47,6 @@
         <br>
       </div>
     </div>
-    <script src="designs.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
