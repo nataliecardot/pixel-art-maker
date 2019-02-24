@@ -5,6 +5,7 @@ const eraseMode = document.querySelector('.erase-mode');
 const drawMode = document.querySelector('.draw-mode');
 
 function makeGrid() {
+  document.body.style.cursor = "url(brush.png) 0 32, auto";
   let gridHeight = document.querySelector('.input-height').value;
   let gridWidth = document.querySelector('.input-width').value;
   // If grid already present, clears any cells that have been filled in
@@ -78,6 +79,7 @@ pixelCanvas.addEventListener('dblclick', e => {
 
 // Allows for drag and single-cell erasing upon clicking 'erase' button. Code for double-click erase functionality (Without entering erase mode) is above. Also note 'down' was set to false in variable above
 eraseMode.addEventListener('click', function() {
+  document.body.style.cursor = "url(eraser.png) 0 32, auto";
   // Enables drag erasing while in erase mode
   pixelCanvas.addEventListener('mousedown', function(e) {
   	down = true;
@@ -105,6 +107,7 @@ eraseMode.addEventListener('click', function() {
 
 // Allows user to return to (default) draw mode after using 'erase' button. Note 'down' was set to false in variable above
 drawMode.addEventListener('click', function() {
+  document.body.style.cursor = "url(brush.png) 0 32, auto";
   pixelCanvas.addEventListener('mousedown', function(e) {
   	down = true;
   	pixelCanvas.addEventListener('mouseup', function() {
