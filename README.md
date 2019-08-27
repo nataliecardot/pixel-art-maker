@@ -1,4 +1,4 @@
-# pixel-art-maker-vanilla-js
+# Pixel Art Maker
 
 This is the final project of Udacity's Grow with Google Front-End Web Development scholarship challenge course.
 
